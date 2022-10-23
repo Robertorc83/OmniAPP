@@ -19,7 +19,7 @@
       "function": {
         "OMNI1CreateAuthChallenge": {
           "deploymentBucketName": "amplify-omni1-dev-103557-deployment",
-          "s3Key": "amplify-builds/OMNI1CreateAuthChallenge-4962356862343461476d-build.zip"
+          "s3Key": "amplify-builds/OMNI1CreateAuthChallenge-646b67334d46446c624d-build.zip"
         },
         "OMNI1DefineAuthChallenge": {
           "deploymentBucketName": "amplify-omni1-dev-103557-deployment",
@@ -27,7 +27,7 @@
         },
         "OMNI1PostConfirmation": {
           "deploymentBucketName": "amplify-omni1-dev-103557-deployment",
-          "s3Key": "amplify-builds/OMNI1PostConfirmation-464b5764692f66726a4c-build.zip"
+          "s3Key": "amplify-builds/OMNI1PostConfirmation-2b6844335558792f3561-build.zip"
         },
         "OMNI1PreSignup": {
           "deploymentBucketName": "amplify-omni1-dev-103557-deployment",

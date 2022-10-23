@@ -151,11 +151,7 @@ const SignUp = () => {
           placeholder='Celular'
           autoCapitalize="none"
           placeholderTextColor='#332C54'
-          onChangeText={text => { 
-            if(text.length == 12){
-              setNumber(text)
-            }  
-          }}
+          onChange={text => setNumber(text)}
           placeholderText={number}
         />
         <TouchableOpacity 

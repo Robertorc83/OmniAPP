@@ -1,0 +1,14 @@
+{
+  "resourceName": "OMNI1",
+  "policyUUID": "7d556623",
+  "bucketName": "omni1",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

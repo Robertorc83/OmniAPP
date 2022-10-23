@@ -1,10 +1,87 @@
 # This "input" configures a global authorization rule to enable public access to
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+input AMPLIFY {
+  globalAuthRule: AuthRule = {allow: public}
+} # FOR TESTING ONLY!
 
-type Todo @model {
+type User @model {
   id: ID!
   name: String
+  last_name: String
   phone_number: String!
   email: String
+  orders: [Order] @hasMany
+  reviews: [Review] @hasMany
+  
 }
+
+type Driver @model {
+  id: ID!
+  name: String
+  last_name: String
+  phone_number: String!
+  email: String
+  soat: String
+  licence: String
+  antecedentes: String
+  orders: [Order] @hasMany
+  reviews: [Review] @hasMany
+  car: Car @hasOne
+  status: String
+  payment_status: String
+}
+
+type Car @model {
+  id: ID!
+  type: String!
+  model: String
+  year: Int
+
+  latitude: Float
+  longitude: Float
+  heading: Float
+  isActive: Boolean
+
+  orders: [Order] @hasMany
+
+  driverId: ID!
+  driver: Driver @belongsTo(fields: ["driverId"])
+}
+
+type Order @model {
+  id: ID!
+  createdAt: String!
+
+  type: String!
+  status: String
+  price: Float
+
+  originLatitude: Float!
+  oreiginLongitude: Float!
+
+  destLatitude: Float!
+  destLongitude: Float!
+
+  userId: ID! 
+  user: User @belongsTo(fields: ["userId"])
+
+  driverId: ID! 
+  driver: Driver @belongsTo(fields: ["userId"])
+
+  carId: ID! 
+  car: Car @belongsTo(fields: ["carId"])
+}
+
+type Review @model {
+  title: String!
+  description: String
+  stars: Int
+
+  userId: ID! 
+  user: User @belongsTo(fields: ["userId"])
+
+  driverId: ID! 
+  driver: Driver @belongsTo(fields: ["userId"])
+
+}
+

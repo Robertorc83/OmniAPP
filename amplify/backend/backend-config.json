@@ -115,5 +115,12 @@
         }
       }
     }
+  },
+  "storage": {
+    "OMNI1": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
